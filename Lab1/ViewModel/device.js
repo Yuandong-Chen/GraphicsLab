@@ -8,12 +8,7 @@ let deviceRender = (height, width, ticks, ctx, dataset) => {
   let data = new Uint32Array(buf);
   for (let y = 0; y < height; ++y) {
     for (let x = 0; x < width; ++x) {
-      let value = dataset[y][x];
-      data[y * width + x] =
-                (255   << 24) |    // alpha
-                (value/2 << 16) |    // blue
-                (value <<  8) |    // green
-                255;            // red
+      data[y * width + x] = dataset[x][y][1];
     }
   }
   imageData.data.set(buf8);
