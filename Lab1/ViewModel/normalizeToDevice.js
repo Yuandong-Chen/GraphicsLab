@@ -40,7 +40,7 @@ let inPoly = (x, y, poly, points, dataset) => {
   let z = c1 * v1[2] + c2 * v2[2] + points[poly[0]][2];
   if(z > 0 && z <= dataset[x][y][0]) {
     dataset[x][y][0] = z
-    let strength = Math.floor(255/(Math.floor(minDis) + 1))
+    let strength = Math.floor(255/(minDis + 1))
     if(minDis <= 1) {
       dataset[x][y][1] = rgbaToUint32(strength, strength, strength, 255);
     }
