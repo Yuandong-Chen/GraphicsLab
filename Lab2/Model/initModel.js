@@ -1,5 +1,5 @@
 let parseFile = (s) => {
-  window.model = {
+  let model = {
     points: new Array(),
     polygons: new Array()
   }
@@ -11,21 +11,19 @@ let parseFile = (s) => {
   }
   for (let i = 1; i <= parseInt(b); i++) {
     let [v0, v1, v2] = arrLines[i].trim().split(/\s+/);
-    window.model.points.push([parseFloat(v0), parseFloat(v1), parseFloat(v2)]);
+    model.points.push([parseFloat(v0), parseFloat(v1), parseFloat(v2)]);
   }
   for (let j = parseInt(b)+ 1; j <= parseInt(b) + parseInt(c); j++) {
     let [num, ...res] = arrLines[j].trim().split(/\s+/);
     if(res.length > 2) {
-      window.model.polygons.push(res.map(x => parseInt(x) - 1));
+      model.polygons.push(res.map(x => parseInt(x) - 1));
     }
   }
+  window.models.push(model)
 }
 
 let initModel = (callback) => {
-  window.model = {
-    points: new Array(),
-    polygons: new Array()
-  }
+  window.models = new Array();
   const inputElement = document.getElementById("input");
   inputElement.addEventListener("change", handleFiles, false);
   function handleFiles() {

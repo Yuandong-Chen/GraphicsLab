@@ -133,7 +133,7 @@ let tryFillPoly = (height, width, poly, dataset, points) => {
   }
 }
 
-let normarlizeToDevice = (height, width, normalized) => {
+let normarlizeToDevice = (height, width, models) => {
   let dataset = new Array(width);
   for (let i = 0; i < width; i++) {
     dataset[i] = new Array(height)
@@ -141,12 +141,15 @@ let normarlizeToDevice = (height, width, normalized) => {
       dataset[i][j] = [Infinity, rgbaToUint32(0, 0, 0, 255)]; // set default to black
     }
   }
-  for (var i = 0; i < normalized.points.length; i++) {
-    normalized.points[i] = mapToDevice(width, height, normalized.points[i]);
-  }
 
-  for (var i = 0; i < normalized.polygons.length; i++) {
-    tryFillPoly(height, width, normalized.polygons[i], dataset, normalized.points);
+  for (var m = 0; m < models.length; m++) {
+    for (var i = 0; i < models[m].points.length; i++) {
+      models[m].points[i] = mapToDevice(width, height, models[m].points[i]);
+    }
+
+    for (var i = 0; i < models[m].polygons.length; i++) {
+      tryFillPoly(height, width, models[m].polygons[i], dataset, models[m].points);
+    }
   }
   return dataset;
 }

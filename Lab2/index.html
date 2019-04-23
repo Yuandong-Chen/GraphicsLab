@@ -63,7 +63,7 @@ bindListen();
 initModel(()=> cameraInit([3.0,3.0,-3.0], [0.0,0.0,0.0]));
 cameraInit([3.0,3.0,-3.0], [0.0,0.0,0.0]);
 var draw = () => {
-  viewModel(height, width, ticks, ctx, pureModel(window.model));
+  viewModel(height, width, ticks, ctx, pureModel(window.models));
   window.requestAnimationFrame(draw);
 }
 draw();
