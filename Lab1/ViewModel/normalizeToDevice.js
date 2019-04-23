@@ -38,10 +38,10 @@ let inPoly = (x, y, poly, points, dataset) => {
   let c1 = (d * e - b * f + 0.0) / (a * d - b * c);
   let c2 = (a * f - c * e + 0.0) / (a * d - b * c);
   let z = c1 * v1[2] + c2 * v2[2] + points[poly[0]][2];
-  if(z > 0 && z <= dataset[x][y][0]) {
+  if(z <= dataset[x][y][0]) {
     dataset[x][y][0] = z
     let strength = Math.floor(255/(minDis + 1))
-    if(minDis <= 1) {
+    if(minDis <= 100) {
       dataset[x][y][1] = rgbaToUint32(strength, strength, strength, 255);
     }
     else {
@@ -77,7 +77,7 @@ let normarlizeToDevice = (height, width, normalized) => {
   for (let i = 0; i < width; i++) {
     dataset[i] = new Array(height)
     for (let j = 0; j < height; j++) {
-      dataset[i][j] = [1, rgbaToUint32(0, 0, 0, 255)]; // set default to black
+      dataset[i][j] = [Infinity, rgbaToUint32(0, 0, 0, 255)]; // set default to black
     }
   }
   for (var i = 0; i < normalized.points.length; i++) {
