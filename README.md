@@ -8,8 +8,8 @@ The .d files are attached under directory "D files" under Lab1 directory.<br>
 2. [Lab2](https://yuandong-chen.github.io/GraphicsLab/Lab2/index.html) use ET/AET with z-buffer algorithm to boost rendering performance. <br>
 ![alt text](https://yuandong-chen.github.io/GraphicsLab/Lab2/HW2.gif) <br>
 3. [Lab3](https://yuandong-chen.github.io/GraphicsLab/Lab3/index.html) Phong illumination model with Constant, Gouraud and Phong Shading. <br>
-![alt text](https://yuandong-chen.github.io/GraphicsLab/Lab2/Constant.gif) <br>
-![alt text](https://yuandong-chen.github.io/GraphicsLab/Lab2/Gouraud.gif) <br>
-![alt text](https://yuandong-chen.github.io/GraphicsLab/Lab2/Phong.gif) <br>
-4. [Lab3](https://yuandong-chen.github.io/GraphicsLab/Lab4/index.html) Bumping texture<br>
-![alt text](https://yuandong-chen.github.io/GraphicsLab/Lab2/Rotten_iron_donut.gif) <br>
+![alt text](https://yuandong-chen.github.io/GraphicsLab/Lab3/Constant.gif) <br>
+![alt text](https://yuandong-chen.github.io/GraphicsLab/Lab3/Gouraud.gif) <br>
+![alt text](https://yuandong-chen.github.io/GraphicsLab/Lab3/Phong.gif) <br>
+4. [Lab4](https://yuandong-chen.github.io/GraphicsLab/Lab4/index.html) Bumping texture<br>
+![alt text](https://yuandong-chen.github.io/GraphicsLab/Lab4/Rotten_iron_donut.gif) <br>
